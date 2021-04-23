@@ -1,0 +1,27 @@
+aleksandrur@MacBook-Pro-Aleksandr ~ % ls -la
+total 72
+drwxr-xr-x+ 24 aleksandrur  staff    768 20 апр 17:04 .
+drwxr-xr-x   5 root         admin    160 24 мар 18:07 ..
+-r--------   1 aleksandrur  staff      8 24 мар 18:07 .CFUserTextEncoding
+-rw-r--r--@  1 aleksandrur  staff  10244 20 апр 16:11 .DS_Store
+drwx------   2 aleksandrur  staff     64 20 апр 16:27 .Trash
+drwxr-xr-x   3 aleksandrur  staff     96  3 апр 14:14 .config
+drwxr-xr-x   3 aleksandrur  staff     96 14 апр 14:35 .eclipse
+-rw-r--r--   1 aleksandrur  staff     74 15 апр 17:37 .gitconfig
+drwxr-xr-x  11 aleksandrur  staff    352 15 апр 20:27 .gitkraken
+-rw-r--r--   1 aleksandrur  staff     38 14 апр 14:41 .my.cnf
+-rw-------   1 aleksandrur  staff   2716 16 апр 17:58 .mysql_history
+-rw-------   1 aleksandrur  staff    957 15 апр 19:32 .viminfo
+-rw-------   1 aleksandrur  staff   3802 16 апр 17:58 .zsh_history
+drwx------  28 aleksandrur  staff    896 20 апр 17:04 .zsh_sessions
+drwxr-xr-x   2 aleksandrur  staff     64 11 апр 11:59 Creative Cloud Files
+drwx------@  8 aleksandrur  staff    256 15 апр 17:39 Desktop
+drwx------+ 18 aleksandrur  staff    576 20 апр 15:35 Documents
+drwx------+ 39 aleksandrur  staff   1248 20 апр 16:51 Downloads
+drwx------@ 70 aleksandrur  staff   2240 15 апр 10:17 Library
+drwx------   4 aleksandrur  staff    128 26 мар 09:51 Movies
+drwx------+  4 aleksandrur  staff    128 11 апр 11:42 Music
+drwx------+  4 aleksandrur  staff    128 24 мар 18:09 Pictures
+drwxr-xr-x+  4 aleksandrur  staff    128 24 мар 18:07 Public
+drwxr-xr-x   5 aleksandrur  staff    160 14 апр 23:47 mysql
+

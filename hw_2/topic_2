@@ -1,0 +1,40 @@
+mysql> CREATE DATABASE IF NOT EXISTS example;
+Query OK, 1 row affected (0.06 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| example            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| shop               |
+| sys                |
++--------------------+
+6 rows in set (0.03 sec)
+
+mysql> USE example;
+Database changed
+mysql> SHOW TABLES;
+Empty set (0.00 sec)
+mysql> CREATE TABLE users (id INT,name VARCHAR(255));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> SHOW TABLES;
++-------------------+
+| Tables_in_example |
++-------------------+
+| users             |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> DESCRIBE users;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | int          | YES  |     | NULL    |       |
+| name  | varchar(255) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
