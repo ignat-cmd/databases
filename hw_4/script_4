@@ -1,0 +1,63 @@
+USE vk;
+
+SHOW TABLES;
+
+SELECT * FROM profiles;
+SELECT * FROM profiles WHERE created_at > updated_at;
+UPDATE profiles SET updated_at = NOW() WHERE created_at > updated_at;
+SELECT * FROM users;
+SELECT * FROM users WHERE created_at > updated_at;
+UPDATE users SET updated_at = NOW() WHERE created_at > updated_at;
+SELECT * FROM users;
+SELECT * FROM messages;
+SELECT * FROM messages WHERE from_user_id = to_user_id;
+DESC messages ;
+UPDATE messages SET from_user_id = to_user_id + 1 WHERE from_user_id = to_user_id;
+SELECT * FROM messages WHERE from_user_id = to_user_id;
+SELECT * FROM messages;
+SELECT * FROM media;
+CREATE TEMPORARY TABLE extansion (name VARCHAR(10));
+INSERT INTO extansion VALUES ('jpeg'), ('mp3'), ('avi'), ('mp4'), ('png');
+SELECT * FROM extansion;
+UPDATE media SET filename = CONCAT(
+'http://dropbox.net/vk/',
+'filename',
+'.',
+(SELECT name FROM extansion ORDER BY RAND() LIMIT 1)
+);
+UPDATE media SET size = FLOOR(10000 + (RAND() * 1000000)) WHERE size < 1000;
+UPDATE media SET metadata = CONCAT(
+'{"owner":"',
+(SELECT CONCAT(first_name, ' ', last_name, ',', ' ', 'email:', ' ', email) FROM users WHERE id = media.user_id),
+'"}'
+);
+ALTER TABLE media MODIFY COLUMN metadata JSON;
+SELECT * FROM media_types;
+DELETE FROM media_types ;
+INSERT INTO media_types (name) VALUES
+('photo'),
+('image'),
+('audio'),
+('video');
+
+TRUNCATE media_types ; 
+UPDATE media SET media_type_id = FLOOR(1 + RAND() * 3);
+SELECT * FROM media WHERE created_at > updated_at;
+SELECT * FROM friendship;
+UPDATE friendship SET user_id = FLOOR(1 + RAND() * 100); 
+UPDATE friendship SET friend_id = FLOOR(1 + RAND() * 100);
+SELECT * FROM friendship WHERE user_id = friend_id;
+UPDATE friendship SET friend_id = friend_id + 1 WHERE friend_id = user_id;
+SELECT * FROM friendship_statuses;
+SELECT * FROM friendship WHERE created_at > updated_at;
+UPDATE friendship SET updated_at = NOW() WHERE created_at > updated_at;
+SELECT * FROM communities;
+SELECT * FROM communities WHERE created_at > updated_at;
+UPDATE communities SET updated_at = NOW() WHERE created_at > updated_at;
+SELECT * FROM friendship; 
+SELECT * FROM friendship WHERE confirmed_at < created_at;
+UPDATE friendship SET confirmed_at = created_at;
+DELETE FROM communities WHERE id > 30;
+SELECT * FROM communities_users;
+UPDATE communities_users SET community_id = FLOOR(1 + RAND() * 30); 
+
