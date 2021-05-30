@@ -1,0 +1,13 @@
+-- Домашка номер 7 --------
+-- 1. Составьте список пользователей users, которые осуществили хотя бы один заказ orders в интернет магазине.
+
+SELECT u.id, u.name FROM orders AS o JOIN users AS u ON u.id = o.user_id;
+
+SELECT id, name FROM users WHERE EXISTS (SELECT * FROM orders WHERE orders.user_id = users.id);
+
+-- 2. Выведите список товаров products и разделов catalogs, который соответствует товару.
+
+SELECT p.name, p.price, c.name FROM catalogs AS c 
+	JOIN 
+		products AS p
+			WHERE c.id = p.catalog_id;
